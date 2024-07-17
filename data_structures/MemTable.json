@@ -1,0 +1,15 @@
+{
+    "struct_size": "0x70",
+    "arena_": {
+        "offset": "0x18",
+        "size": "0x30",
+        "type": "class",
+        "comment": "leveldb::Arena"
+    },
+    "table_": {
+        "offset": "0x48",
+        "size": "0x20",
+        "type": "class",
+        "comment": "leveldb::SkipList<const char *,leveldb::MemTable::KeyComparator>"
+    }
+}

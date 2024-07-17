@@ -1,0 +1,13 @@
+{
+    "struct_size": "0x30",
+    "blocks_": {
+        "offset": "0x10",
+        "size": "0x18",
+        "type": "vector",
+        "key_type": "ptr64",
+        "key_size": "0x8",
+        "value_type": "None",
+        "value_size": "0x0",
+        "comment": "vector<ptr64>"
+    }
+}

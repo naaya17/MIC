@@ -1,0 +1,40 @@
+{
+    "struct_size": "0x68",
+    "create_if_missing": {
+        "offset": "0x8",
+        "size": "0x1",
+        "type": "boolean",
+        "comment": "boolean"
+    },
+    "error_if_exists": {
+        "offset": "0x9",
+        "size": "0x1",
+        "type": "boolean",
+        "comment": "boolean"
+    },
+    "write_buffer_size": {
+        "offset": "0x20",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "block_size": {
+        "offset": "0x38",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "max_file_size": {
+        "offset": "0x48",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "compression": {
+        "offset": "0x50",
+        "size": "0x4",
+        "type": "enum",
+        "available_values":[0, 1, 2],
+        "comment": "leveldb::CompressionType"
+    }
+}

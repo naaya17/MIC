@@ -1,0 +1,46 @@
+{
+    "struct_size": "0x210",
+    "dbname_": {
+        "offset": "0x08",
+        "size": "0x18",
+        "type": "u8string",
+        "is_nullable": "True",
+        "comment": "u8string"
+    },
+    "next_file_number_": {
+        "offset": "0x40",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "manifest_file_number_": {
+        "offset": "0x48",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "last_sequence_": {
+        "offset": "0x50",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "log_number_": {
+        "offset": "0x58",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "prev_log_number_": {
+        "offset": "0x60",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "current_": {
+        "offset": "0x160",
+        "size": "0x08",
+        "type": "ptr64",
+        "comment": "leveldb::Version"
+    }
+}

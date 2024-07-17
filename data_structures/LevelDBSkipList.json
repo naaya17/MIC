@@ -1,0 +1,21 @@
+{
+    "struct_size": "0x28",
+    "arena_": {
+        "offset": "0x10",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "ptr64"
+    },
+    "head_": {
+        "offset": "0x18",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "ptr64"
+    },
+    "max_height_": {
+        "offset": "0x20",
+        "size": "0x4",
+        "type": "uint32",
+        "comment": "uint32"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "struct_size": "0xe8",
+    "vset_": {
+        "offset": "0x0",
+        "size": "0x08",
+        "type": "ptr64",
+        "comment": "leveldb::VersionSet"
+    },
+    "next_": {
+        "offset": "0x08",
+        "size": "0x08",
+        "type": "ptr64",
+        "comment": "leveldb::Version"
+    },
+    "prev_": {
+        "offset": "0x10",
+        "size": "0x08",
+        "type": "ptr64",
+        "comment": "leveldb::Version"
+    },
+    "files_": {
+        "offset": "0x20",
+        "size": "0xa8",
+        "type": "vector",
+        "comment": "vector[7] : sizeof(vector) = 0x18 * 7 = 0xa8"
+    },
+    "file_to_compact_": {
+        "offset": "0xc8",
+        "size": "0x08",
+        "type": "ptr64",
+        "comment": "leveldb::FileMetaData"
+    },
+    "file_to_compact_level_": {
+        "offset": "0xd0",
+        "size": "0x04",
+        "type": "int32",
+        "comment": "int32"
+    }
+}

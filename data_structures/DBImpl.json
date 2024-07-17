@@ -1,0 +1,76 @@
+{
+    "struct_size": "0x278",
+    "options_": {
+        "offset": "0x30",
+        "size": "0x68",
+        "type": "class",
+        "comment": "leveldb::Options"
+    },
+    "owns_info_log_": {
+        "offset": "0x98",
+        "size": "0x1",
+        "type": "bool",
+        "comment": "bool"
+    },
+    "owns_cache_": {
+        "offset": "0x99",
+        "size": "0x1",
+        "type": "bool",
+        "comment": "bool"
+    },
+    "table_cache_": {
+        "offset": "0xb8",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "leveldb::TableCache"
+    },
+    "db_lock_": {
+        "offset": "0xc0",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "leveldb::FileLock"
+    },
+    "shutting_down_": {
+        "offset": "0xd8",
+        "size": "0x1",
+        "type": "bool",
+        "comment": "bool"
+    },
+    "dbname_": {
+        "offset": "0xa0",
+        "size": "0x18",
+        "type": "u8string",
+        "is_nullable": "True",
+        "comment": "u8string"
+    },
+    "mem_": {
+        "offset": "0xf0",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "leveldb::MemTable"
+    },
+    "imm_": {
+        "offset": "0xf8",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "leveldb::MemTable"
+    },
+    "has_imm_": {
+        "offset": "0x100",
+        "size": "0x1",
+        "type": "bool",
+        "comment": "bool"
+    },
+    "logfile_number_": {
+        "offset": "0x110",
+        "size": "0x8",
+        "type": "uint64",
+        "comment": "uint64"
+    },
+    "versions_": {
+        "offset": "0x1a8",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "leveldb::VersionSet"
+    }
+}

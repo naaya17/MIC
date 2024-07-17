@@ -1,0 +1,4 @@
+colorama==0.4.6
+minidump==0.0.23
+more-itertools==10.2.0
+tqdm==4.66.4

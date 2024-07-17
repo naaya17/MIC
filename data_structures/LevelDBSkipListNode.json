@@ -1,0 +1,15 @@
+{
+    "struct_size": "0x10",
+    "key_": {
+        "offset": "0x00",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "ptr64"
+    },
+    "next_": {
+        "offset": "0x08",
+        "size": "0x8",
+        "type": "ptr64",
+        "comment": "ptr64"
+    }
+}
