@@ -6,6 +6,7 @@ import argparse
 import loggers
 import logger
 import tqdm
+import shutil
 
 from minidump.minidumpfile import MinidumpFile
 from minidump.streams import MemoryType, MemoryState, AllocationProtect
@@ -53,7 +54,20 @@ def main():
     _quiet_mode = getattr(args, 'quiet', False)
 
     if not _log_file:
-        os.mkdir('results')
+        directory_path = 'results'
+        if os.path.exists(directory_path) and os.path.isdir(directory_path):
+            for filename in os.listdir(directory_path):
+                file_path = os.path.join(directory_path, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print(e)
+        else:
+            os.mkdir(directory_path)
+        
         local_date_time = datetime.datetime.now()
         _log_file = (
                 'results/{0:s}-{1:04d}{2:02d}{3:02d}T{4:02d}{5:02d}{6:02d}.log.gz').format(
@@ -88,15 +102,18 @@ def main():
     with open(_out_file, 'a', encoding='utf-8') as f:
         f.write(f'{{')
     for vad in tqdm.tqdm(vads, position=0):
-        chunk = minidmp.get_reader().read(vad.BaseAddress, vad.RegionSize)
-        for offset in tqdm.tqdm(range(0, vad.RegionSize - 0x278, 8), position=1, leave=False):
-            buff = chunk[offset:offset + 0x278]
-            ret = _work(minidmp, buff, offset+vad.BaseAddress)
-            if ret is not None:
-                with open(_out_file, 'a', encoding='utf-8') as f:
-                    num += 1
-                    f.write(f'"DBImpl{num}":\n')
-                    f.write(str(ret) + "\n,")
+        try:
+            chunk = minidmp.get_reader().read(vad.BaseAddress, vad.RegionSize)
+            for offset in tqdm.tqdm(range(0, vad.RegionSize - 0x278, 8), position=1, leave=False):
+                buff = chunk[offset:offset + 0x278]
+                ret = _work(minidmp, buff, offset+vad.BaseAddress)
+                if ret is not None:
+                    with open(_out_file, 'a', encoding='utf-8') as f:
+                        num += 1
+                        f.write(f'"DBImpl{num}":\n')
+                        f.write(str(ret) + "\n,")
+        except Exception as e:
+            pass
         
     with open(_out_file, 'a', encoding='utf-8') as f:
         f.write(f'}}')
@@ -111,4 +128,17 @@ def _work(minidmp, buff, base_addr):
         pass
 
 if __name__ == '__main__':
+    print('''
+
+            
+███╗   ███╗██╗ ██████╗
+████╗ ████║██║██╔════╝
+██╔████╔██║██║██║     
+██║╚██╔╝██║██║██║     
+██║ ╚═╝ ██║██║╚██████╗
+╚═╝     ╚═╝╚═╝ ╚═════╝
+       DFRWS APAC 2024  
+
+          
+          ''')
     main()
